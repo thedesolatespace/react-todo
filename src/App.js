@@ -1,14 +1,21 @@
 import { useState } from 'react';
-import { Input } from './components/input';
-import { List } from './components/list';
-import { Title } from './components/title';
-import { nanoid } from 'nanoid';
+import { Input } from './components/input/Input';
+import { List } from './components/list/List';
+import { StyledTitle } from './components/title/Title.styles';
+//import { nanoid } from 'nanoid';
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  const [filter, setFilter] = useState(0);
+
+  const filterTodo = (value) => {
+    console.log('filter', +value + 1);
+    setFilter(+value);
+  };
+
   const addTodo = (text) => {
-    const id = nanoid();
+    const id = Date.now();
     const newTask = { id, text, done: false };
     setTasks((prev) => [...prev, newTask]);
   };
@@ -28,9 +35,15 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Title />
-        <Input addTodo={addTodo} />
-        <List removeTodo={removeTodo} toggleDone={toggleDone} tasks={tasks} />
+        <StyledTitle>todo app</StyledTitle>
+
+        <Input filterTodo={filterTodo} addTodo={addTodo} />
+        <List
+          filterSet={filter}
+          removeTodo={removeTodo}
+          toggleDone={toggleDone}
+          tasks={tasks}
+        />
       </div>
     </div>
   );

@@ -18,7 +18,6 @@
   },
   "plugins": ["react"],
   "rules": {
-    "indent": ["warn", 2],
     "quotes": ["warn", "single"],
     "semi": ["warn", "always"],
     "import/prefer-default-export": 0,

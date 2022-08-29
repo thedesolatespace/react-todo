@@ -1,9 +1,8 @@
-import { StyledTask } from './index.styles';
+import { StyledDate, StyledTask, StyledTaskText } from './index.styles';
 
 export const Task = ({ task, toggleDone, removeTodo }) => {
   return (
     <StyledTask
-      className={task.done ? 'done' : ''}
       onContextMenu={(e) => {
         e.preventDefault();
         removeTodo(task.id);
@@ -13,7 +12,11 @@ export const Task = ({ task, toggleDone, removeTodo }) => {
       }}
       id={task.id}
     >
-      {task.text}
+      <StyledTaskText className={task.done ? 'done' : ''}>
+        {task.text}
+      </StyledTaskText>
+
+      <StyledDate>{new Date(task.id).toLocaleDateString()}</StyledDate>
     </StyledTask>
   );
 };
