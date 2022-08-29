@@ -21,7 +21,7 @@ code {
 }
 
 .container {
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   background: #ecb390;
   width: clamp(300px, 50%, 600px);
   margin: 0 auto;

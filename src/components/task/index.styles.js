@@ -12,6 +12,7 @@ export const StyledTask = styled.li`
   }
 `;
 export const StyledDate = styled.p`
+  align-self: center;
   text-align: right;
   word-break: keep-all;
 `;
