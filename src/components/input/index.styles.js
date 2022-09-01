@@ -4,11 +4,9 @@ export const StyledInput = styled.form`
   display: flex;
   justify-content: stretch;
   flex-wrap: wrap;
-  //justify-content: start;
   margin-top: 3px;
 `;
 export const StyledTextInput = styled.input`
-  //margin-top: 3px;
   width: 80%;
   padding: 10px;
   border-radius: 10px 0px 0px 10px;
