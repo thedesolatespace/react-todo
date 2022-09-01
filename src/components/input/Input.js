@@ -34,11 +34,11 @@ export const Input = ({ addTodo, filterTodo }) => {
           placeholder="Enter your TODO..."
         />
         <StyledFilter
-          defaultValue={false}
+          defaultValue={'0'}
           onChange={(e) => filterTodo(e.target.value)}
         >
-          <option value={0}>ALL</option>
-          <option value={1}>COMPLETED</option>
+          <option value={'0'}>ALL</option>
+          <option value={'1'}>COMPLETED</option>
         </StyledFilter>
         <StyledButon>ADD TODO</StyledButon>
       </StyledInput>
